@@ -128,7 +128,7 @@ __attribute__((naked)) void PendSV_Handler(void)
         "LDR R0, [R4] \n"        // Read the address of tcb->sp of Task B then put it into R0. R0 is currently pointing to the top of Task B's stack
         "LDMIA R0!, {R4-R11} \n" /* LDMIA (Load Multiple Increment After). It takes the data from SRAM and
                                     stores into R4 to R11 of CPU. "!" makes R0 go up */
-        "MSR PSP, R0 \n"         // Help CPU notice that stack pointer of task B is in R0 (SỬA Ở ĐÂY: MSR thay vì MSP)
+        "MSR PSP, R0 \n"         // Help CPU notice that stack pointer of task B is in R0
 
         "CPSIE I \n" // Enable interrupt
         "BX LR \n"   // Branch Exchange
