@@ -5,38 +5,42 @@
 ![MCU](https://img.shields.io/badge/MCU-STM32F108-green.svg)
 ![Status](https://img.shields.io/badge/Status-Active_Learning-success.svg)
 
+## Documents
+
+| Files                  | Description                                                                             |
+| ---------------------- | --------------------------------------------------------------------------------------- |
+| [README.md](README.md) | Main project overview, hardware information, firmware features, and operating principle |
+| [Build](./Build/)      | Contains files.o, .elf, .map                                                            |
+| [Inc](./Inc/)          | Header files, register maps, macros                                                     |
+| [Src](./Src/)          | Source C files (main.c, peripheral drivers)                                             |
+
 ## Project Overview
 
-This project is a deep dive into **bare-metal firmware engineering**, focusing on the STM32F108 microcontroller. The goal is to strip away high-level hardware abstraction layers (HAL) and standard peripheral libraries to understand what happens at the silicon level.
+This project is a deep dive into **bare-metal firmware engineering**, focusing on the STM32F108 microcontroller. By building everything from the ground up, this project serves as a foundational guide to understanding microcontrollers, bridging the gap between hardware architecture and low-level C programming. \
+**The project demonstrates embedded firmware development concepts including:**
 
-By building everything from the ground up, this project serves as a foundational guide to understanding microcontrollers, bridging the gap between hardware architecture and low-level C programming.
+- STM32 Architecture
+- Boot Process & Startup Code
+- Linker Scripts
+- Build Systems
+- Register-Level Programming
+- Learning how to make your own RTOS in STM32
 
-> _"This project will teach you how to use bare-metal on any microcontroller and use your imagination to build anything you want. This is a learning process, so don't be afraid to make mistakes."_
+## Features
 
-## Key Objectives
+**In this projects, we will dive into peripherals of STM32, including:**
 
-- **STM32 Architecture:** Understand the internal bus matrix, memory map, clock tree, and core peripherals of the ARM Cortex-M architecture.
-- **Boot Process & Startup Code:** Write the `startup.c/s` from scratch, defining vector tables, initializing data/bss segments, and handing over control to `main()`.
-- **Linker Scripts (`.ld`):** Design custom linker scripts to precisely control memory allocation for Flash and SRAM.
-- **Build Systems:** Master `Makefile` to compile, assemble, and link the project using the GNU Arm Embedded Toolchain.
-- **Register-Level Programming:** Control GPIOs, Timers, and communication protocols by directly manipulating memory-mapped registers.
-- **Learning how to make your own RTOS in STM32** Understanding STM32's architecture, how to use
-  registers like PendSV, Systick and learn how to calculate TICK for scheduling tasks.
+- GPIO: Write, read, set pins
+- TIMER: From PWM to making delay function using TIMER
+- USART: Recieve and Sending strings
+- I2C: Connect to OLED, recieve and sending packets
+- ADC: Reading and converting raw data from sensors
+- And many more......
 
-## Project Structure
+**Beside that, we will learn how to use `Systick`, consist of:**
 
-_(Adjust the tree below based on your actual repository structure)_
-
-```text
-📦 bare-metal-stm32
- ┣ 📂 .vscode
- ┣ 📂 Inc               # Header files, register maps, macros
- ┣ 📂 Src               # Source C files (main.c, peripheral drivers)
- ┣ 📂 Build         # Contains files.o, .elf, .map
- ┣ 📜 Makefile          # Build automation
- ┣ 📜 stm32f103.ld    # Linker script for memory layout
- ┗ 📜 README.md         # Project documentation
-```
+- How to make `delay` function
+- Learn how to make a custom RTOS from scheduling to making `OS_Delay()`
 
 ## Prerequisites & Tools
 
@@ -77,7 +81,18 @@ I document my daily progress, bugs encountered, and architectural concepts learn
 I also document my daily progress, bugs and approachs about RTOS in Notion.
 [RTOS from scratch](https://www.notion.so/RTOS-from-scratch-English-ver-33b984656d2c806c9579eb40ed18872a?source=copy_link)
 
-## Philosophy
+<h3>📫 Contact Me</h3>
 
-Bare-metal programming can be unforgiving, but it is deeply rewarding. A hard fault or a segmentation fault is just a stepping stone to fully mastering embedded systems. Keep tinkering, keep breaking things, and keep learning.
-   
+<p>
+  <a href="https://github.com/HotIveTea">
+    <img src="https://img.shields.io/badge/GitHub-HotIveTea-181717?style=for-the-badge&logo=github&logoColor=white"/>
+  </a>
+  
+  <a href="https://www.linkedin.com/in/nguyễn-kim-thành-5ba280389/">
+    <img src="https://img.shields.io/badge/LinkedIn-Nguyễn%20Kim%20Thành-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white"/>
+  </a>
+  
+  <a href="mailto:nkimthanh47@gmail.com">
+    <img src="https://img.shields.io/badge/Gmail-nkimthanh47%40gmail.com-EA4335?style=for-the-badge&logo=gmail&logoColor=white"/>
+  </a>
+</p>
