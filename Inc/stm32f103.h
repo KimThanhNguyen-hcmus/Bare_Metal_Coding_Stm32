@@ -1,7 +1,7 @@
 #ifndef STM32F103_H
 #define STM32F103_H
 #include <stdint.h>
-// Dia chi goc
+// Original
 #define PERIPH_BASE 0x40000000UL
 #define APB2PERIPH_BASE (PERIPH_BASE + 0x10000UL)
 #define APB1PERIPH_BASE (PERIPH_BASE)
@@ -9,7 +9,7 @@
 
 #define RCC_PERIPH_BASE (AHBPERIPH_BASE + 0x1000UL)
 
-// Dia chi goc cua cac GPIO
+// GPIO's address
 #define GPIOG_PERIPH_BASE (APB2PERIPH_BASE + 0x2000UL)
 #define GPIOF_PERIPH_BASE (APB2PERIPH_BASE + 0x1C00UL)
 #define GPIOE_PERIPH_BASE (APB2PERIPH_BASE + 0x1800UL)
@@ -17,7 +17,7 @@
 #define GPIOC_PERIPH_BASE (APB2PERIPH_BASE + 0x1000UL)
 #define GPIOB_PERIPH_BASE (APB2PERIPH_BASE + 0x0C00UL)
 #define GPIOA_PERIPH_BASE (APB2PERIPH_BASE + 0x0800UL)
-// Dia chi goc cua cac USART
+// USART's address
 #define USART1_PERIPH_BASE (APB2PERIPH_BASE + 0x3800UL)
 #define USART2_PERIPH_BASE (APB1PERIPH_BASE + 0x4400UL)
 #define USART3_PERIPH_BASE (APB1PERIPH_BASE + 0x4800UL)
@@ -27,6 +27,11 @@
 #define TIMER1_PERIPH_BASE (APB2PERIPH_BASE + 0x2C00UL)
 #define TIMER2_PERIPH_BASE (APB1PERIPH_BASE + 0x0000UL)
 #define TIMER3_PERIPH_BASE (APB1PERIPH_BASE + 0x0400UL)
+// I2C's address
+#define I2C1_PERIPH_BASE (APB1PERIPH_BASE + 0x5400UL)
+#define I2C2_PERIPH_BASE (APB1PERIPH_BASE + 0x5800UL)
+
+#define Systick 0xE000E010
 typedef struct
 {
     volatile uint32_t CR;
@@ -88,6 +93,26 @@ typedef struct
     volatile uint32_t DCR;
     volatile uint32_t DMAR;
 } TIMER_TypeDef;
+typedef struct
+{
+    volatile uint32_t CR1;
+    volatile uint32_t CR2;
+    volatile uint32_t OAR1;
+    volatile uint32_t OAR2;
+    volatile uint32_t DR;
+    volatile uint32_t SR1;
+    volatile uint32_t SR2;
+    volatile uint32_t CCR;
+    volatile uint32_t TRISE;
+} I2C_TypeDef;
+
+typedef struct
+{
+    volatile uint32_t CTRL;
+    volatile uint32_t LOAD;
+    volatile uint32_t VAL;
+    volatile uint32_t CALIB;
+} Systick_TypeDef;
 #define RCC ((RCC_TypeDef *)RCC_PERIPH_BASE)
 
 #define GPIOA ((GPIO_TypeDef *)GPIOA_PERIPH_BASE)
@@ -107,4 +132,9 @@ typedef struct
 #define TIM1 ((TIMER_TypeDef *)TIMER1_PERIPH_BASE)
 #define TIM2 ((TIMER_TypeDef *)TIMER2_PERIPH_BASE)
 #define TIM3 ((TIMER_TypeDef *)TIMER3_PERIPH_BASE)
+
+#define I2C1 ((I2C_TypeDef *)I2C1_PERIPH_BASE)
+#define I2C2 ((I2C_TypeDef *)I2C2_PERIPH_BASE)
+
+#define SYSTICK ((Systick_TypeDef *)Systick)
 #endif
