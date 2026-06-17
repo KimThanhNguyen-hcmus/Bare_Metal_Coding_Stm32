@@ -10,9 +10,9 @@
 | Files                  | Description                                                                             |
 | ---------------------- | --------------------------------------------------------------------------------------- |
 | [README.md](README.md) | Main project overview, hardware information, firmware features, and operating principle |
-| [Build](./Build/)      | Contains files.o, .elf, .map                                                            |
-| [Inc](./Inc/)          | Header files, register maps, macros                                                     |
-| [Src](./Src/)          | Source C files (main.c, peripheral drivers)                                             |
+| [Docs](./docs/)        | Contains documentation & reference manuals                                              |
+| [Inc](./Inc/)          | Header files, register maps macros and peripheral drivers                               |
+| [Src](./Src/)          | Source C files (main.c, startup.c)                                                      |
 
 ## Project Overview
 
@@ -54,7 +54,7 @@ To build and flash this project, you will need the following tools:
 
 1. Clone the repository:
    ```bash
-   git clone [https://github.com/HotIveTea/Bare_Metal_Coding_Stm32.git](https://github.com/HotIveTea/Bare_Metal_Coding_Stm32.git)
+   git clone https://github.com/KimThanhNguyen-hcmus/Bare_Metal_Coding_Stm32.git
    cd Bare_Metal_Coding_Stm32
    ```
 2. Build the project:
