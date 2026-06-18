@@ -12,7 +12,8 @@ Polling-based serial communication driver for debugging and Bluetooth (HC-06).
 - `void USART_Init(USART_TypeDef *USARTx, uint32_t pclk, uint32_t baudrate)`: Configures UART baudrate and enables TX/RX.
 - `void USART_SendChar(USART_TypeDef *USARTx, char ch)`: Transmits a single character.
 - `void USART_SendString(USART_TypeDef *USARTx, char *str)`: Transmits a null-terminated string.
-- `void USART_SendHex(USART_TypeDef *USARTx, uint8_t data)`: Transmits an 8-bit value in hexadecimal format.
+- `char USART_Received(USART_TypeDef *USARTx)` : Recieves a single character.
+- `void USART_Recieved_String(USART_TypeDef *USARTx, char *buffer, int lenght)` : Recieves strings.
 
 ## Example
 

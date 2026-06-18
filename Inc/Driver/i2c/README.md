@@ -12,7 +12,6 @@ Hardware I2C driver optimized for OLED (SSD1306) and sensors.
 
 - `void I2C_Init(I2C_TypeDef *I2Cx)`: Initializes I2C peripheral (100kHz standard mode) and performs software reset to clear bus lock-ups.
 - `void I2C_WriteByte(I2C_TypeDef *I2Cx, uint8_t slave_addr, uint8_t reg_addr, uint8_t data)`: Sends a single byte to a specific register of a slave device.
-- `void I2C_ScanBus(void)`: Scans the I2C bus from address 1 to 127 and reports found devices.
 
 ## Example
 

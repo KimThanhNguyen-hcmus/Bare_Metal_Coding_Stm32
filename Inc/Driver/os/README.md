@@ -13,6 +13,9 @@ Readmore in [RTOS from scratch](https://www.notion.so/RTOS-from-scratch-English-
 - `void OS_AddThread(TCB_t *task)`: Adds a created task to the circular linked list (Ready Queue).
 - `void OS_Start(void)`: Configures PendSV/SysTick and starts the first task.
 - `void OS_Delay(uint32_t ticks)`: Blocks the current task and yields the CPU.
+- `void OS_InitSysTick(uint32_t ticks)` & `void Systick_Handler(void)` : RTOS need to know a “tick” so that it can run a next task. Using the SysTick Timer that already exist in every Cortex-M cores.
+- `__attribute__((naked)) void PendSV_Handler(void)` : Switching tasks
+- `__attribute__((naked)) void SVCall_Handler(void)` : Starting the first task (keep in the mind that this function only run once)
 
 ## Example
 
@@ -91,6 +94,8 @@ int main(void)
     OS_AddThread(&tcb1);
     OS_TaskCreate(&tcb2, Generic_Blink_Task, (void *)2, task2_stack, STACK_SIZE);
     OS_AddThread(&tcb2);
+    OS_TaskCreate(&tcb3, Generic_Blink_Task, (void *)13, task3_stack, STACK_SIZE);
+    OS_AddThread(&tcb3);
     OS_Start();
     return 0;
 }
