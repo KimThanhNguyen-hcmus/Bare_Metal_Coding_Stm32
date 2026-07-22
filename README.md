@@ -83,11 +83,11 @@ I also document my daily progress, bugs and approachs about RTOS in Notion.
 
 <h3>Contact Me</h3>
 <p>
-  <a href="[https://github.com/HotIveTea](https://github.com/KimThanhNguyen-hcmus)">
+  <a href="[https://github.com/NguyenKimThanh](https://github.com/KimThanhNguyen1409)">
     <img src="https://img.shields.io/badge/GitHub-KimThanhNguyen-181717?style=for-the-badge&logo=github&logoColor=white"/>
   </a>
   
-  <a href="https://www.linkedin.com/in/nguyenkimthanh-hcmus/">
+  <a href="https://www.linkedin.com/in/nguyenkimthanh1409/">
     <img src="https://img.shields.io/badge/LinkedIn-Nguyễn%20Kim%20Thành-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white"/>
   </a>
   
